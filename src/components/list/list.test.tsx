@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 
 describe('Given List component', () => {
   describe('When we instantiate', () => {
-    render(<List></List>);
+    render(<List children={[]}></List>);
 
     test('It should be in the document', () => {
       const element = screen.getByRole('list');

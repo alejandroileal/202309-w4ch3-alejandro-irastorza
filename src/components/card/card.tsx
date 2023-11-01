@@ -1,4 +1,3 @@
-import { JSXElementConstructor } from 'react';
 import {
   Advisor,
   Fighter,
@@ -7,7 +6,7 @@ import {
   Category,
 } from '../../models/character';
 
-export type AnyCharacter = King | Fighter | Advisor | Squire;
+export type AnyCharacter = Fighter | King | Advisor | Squire;
 
 type Props = {
   character: AnyCharacter;
@@ -15,7 +14,7 @@ type Props = {
 export function Card({ character }: Props) {
   const makeExtraData = (item: AnyCharacter) => {
     if ('reignYears' in item) {
-      return <li>Años de reinado: {character.reignYears}</li>;
+      return <li>Años de reinado: {item.reignYears}</li>;
     } else if ('weapon' in item) {
       return (
         <>
@@ -52,7 +51,7 @@ export function Card({ character }: Props) {
     <li className="character col">
       <div className="card character__card">
         <img
-          src={character.name.toLowerCase() + '.jpg'}
+          src={`${character.name.toLowerCase()}.jpg`}
           alt={character.name + character.family}
           className={'character__picture' + character.isAlive && 'card-img-top'}
         />

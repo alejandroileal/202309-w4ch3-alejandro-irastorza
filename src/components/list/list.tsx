@@ -1,14 +1,14 @@
-import { Card } from '../card/card';
+import { AnyCharacter, Card } from '../card/card';
 
 type Props = {
-  children;
+  children: AnyCharacter[];
 };
 
 export function List({ children }: Props) {
   return (
     <div className="app-container">
       <ul className="characters-list row list-unstyled">
-        {children.map((character) => (
+        {children.map((character: AnyCharacter) => (
           <Card character={character}></Card>
         ))}
       </ul>
