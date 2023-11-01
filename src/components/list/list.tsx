@@ -1,28 +1,17 @@
-export function List() {
-  return <ul className="characters-list row list-unstyled"></ul>;
+import { Card } from '../card/card';
+
+type Props = {
+  children;
+};
+
+export function List({ children }: Props) {
+  return (
+    <div className="app-container">
+      <ul className="characters-list row list-unstyled">
+        {children.map((character) => (
+          <Card character={character}></Card>
+        ))}
+      </ul>
+    </div>
+  );
 }
-
-// export class List extends Component {
-//   constructor(selector: string) {
-//     super(selector);
-//     this.template = this.createTemplate();
-//     this.render();
-//   }
-
-//   refresh() {
-//     this.clear();
-//     this.render();
-//   }
-
-//   render() {
-//     super.render();
-//     const elements = repo().map(
-//       (item) => new Card('ul', item as AnyCharacter, this.refresh.bind(this))
-//     );
-//     console.log(elements);
-//   }
-
-//   createTemplate() {
-//     return '<ul class="characters-list row list-unstyled"></ul>';
-//   }
-// }
