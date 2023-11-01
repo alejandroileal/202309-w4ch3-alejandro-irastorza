@@ -1,3 +1,10 @@
+import { List } from '../list/list';
+
 export default function App() {
-  return <p>loaded kitty 😺</p>;
+  return (
+    <div>
+      <p>loaded kitty 😺</p>
+      <List></List>
+    </div>
+  );
 }
