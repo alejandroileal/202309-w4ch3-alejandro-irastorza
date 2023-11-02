@@ -11,7 +11,8 @@
     "test": "jest",
     "test:prod": "jest --watchAll --coverage --watchAll=false --passWithNoTests",
     "test:w": "jest --watchAll --coverage --collectCoverageFrom=src/**/*.{ts,tsx}",
-    "test:f": "jest --watchAll --coverage"
+    "test:f": "jest --watchAll --coverage",
+    "serve-json": "json-server --watch ./src/services/data.json"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -29,6 +30,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
+    "eclint": "2.8.1",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -37,6 +39,7 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jest-ts-webcompat-resolver": "^1.0.0",
+    "json-server": "^0.17.4",
     "sass": "^1.69.5",
     "ts-jest": "^29.1.1",
     "typescript": "^5.0.2",
@@ -44,5 +47,14 @@
   },
   "prettier": {
     "singleQuote": true
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
+      }
+    }
   }
 }
